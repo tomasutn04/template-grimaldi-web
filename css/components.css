@@ -1,0 +1,383 @@
+/* ============================================= */
+/* GRIMALDI COMPONENTS — Reusable UI Elements    */
+/* ============================================= */
+
+/* ═══════════════════════════════════ */
+/*          TITLE COMPONENTS          */
+/* ═══════════════════════════════════ */
+
+.titulo-principal {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--grimaldi-blue);
+    margin-bottom: var(--space-md);
+    text-align: center;
+    line-height: 1.2;
+    padding-bottom: var(--space-sm);
+    border-bottom: 3px solid var(--grimaldi-blue-light);
+    letter-spacing: var(--letter-spacing-heading);
+}
+
+.titulo-contenido {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--grimaldi-blue);
+    margin-bottom: 0.75rem;
+    text-align: left;
+    line-height: 1.3;
+    letter-spacing: var(--letter-spacing-base);
+}
+
+/* ═══════════════════════════════════ */
+/*          TEXT COMPONENTS           */
+/* ═══════════════════════════════════ */
+
+.cuerpo-principal {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--grimaldi-text);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: var(--letter-spacing-base);
+}
+
+.cuerpo-contenido {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--grimaldi-text);
+    text-align: left;
+    margin-bottom: var(--space-md);
+    letter-spacing: var(--letter-spacing-base);
+}
+
+.texto-info {
+    font-size: 0.95rem;
+    color: var(--grimaldi-text-light);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.texto-destacado {
+    font-weight: 600;
+    color: var(--grimaldi-blue);
+    background-color: var(--grimaldi-blue-light);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    display: inline-block;
+}
+
+.subtitulo-seccion {
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════ */
+/*          BUTTON COMPONENTS         */
+/* ═══════════════════════════════════ */
+
+.boton-primario,
+.boton-secundario {
+    background-color: var(--grimaldi-blue);
+    color: var(--grimaldi-white);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: var(--font-primary);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--grimaldi-blue);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    min-height: 44px;
+    min-width: 120px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: var(--grimaldi-blue);
+    border-color: var(--grimaldi-blue);
+}
+
+.boton-primario:hover,
+.boton-secundario:hover {
+    background-color: var(--grimaldi-blue-dark);
+    color: var(--grimaldi-white);
+    transform: translateY(-2px);
+    box-shadow: var(--grimaldi-shadow);
+    text-decoration: none;
+}
+
+.boton-primario:focus-visible,
+.boton-secundario:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 105, 204, 0.3);
+}
+
+.boton-primario:active,
+.boton-secundario:active {
+    transform: translateY(0);
+}
+
+/* ═══════════════════════════════════ */
+/*          CARD COMPONENTS           */
+/* ═══════════════════════════════════ */
+
+.cards-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+    padding: var(--space-md);
+}
+
+.card-info {
+    background-color: var(--grimaldi-white);
+    width: 100%;
+    max-width: 800px;
+    min-height: 200px;
+    margin: 0 auto;
+    box-shadow: var(--grimaldi-shadow);
+    box-sizing: border-box;
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: var(--radius-lg);
+    border: none;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card-info:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--grimaldi-shadow-lg);
+}
+
+.card-grimaldi {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    max-width: 340px;
+    flex: 1 1 280px;
+    padding: var(--space-xl);
+    background-color: var(--grimaldi-white);
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--grimaldi-shadow);
+    transition: all var(--transition-normal);
+}
+
+.card-grimaldi:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--grimaldi-shadow-xl);
+}
+
+.card-panel {
+    background-color: var(--grimaldi-gray-light);
+    border: 2px solid var(--grimaldi-blue);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--grimaldi-shadow);
+    padding: var(--space-2xl);
+    margin-bottom: var(--space-xl);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    justify-content: center;
+}
+
+.card-cuerpo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-md);
+    justify-content: center;
+}
+
+.card-footer {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 2px solid var(--grimaldi-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    color: var(--grimaldi-text-light);
+}
+
+.info-item {
+    background-color: var(--grimaldi-white);
+    box-shadow: var(--grimaldi-shadow);
+    border: 1px solid var(--grimaldi-blue);
+    padding: var(--space-lg);
+    width: 280px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    transition: transform var(--transition-normal);
+}
+
+.info-item:hover {
+    transform: translateY(-3px);
+}
+
+/* ═══════════════════════════════════ */
+/*          ALERT COMPONENTS          */
+/* ═══════════════════════════════════ */
+
+.alerta-exito {
+    background-color: var(--grimaldi-success-bg);
+    color: var(--grimaldi-success);
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+    border-left: 4px solid var(--grimaldi-success);
+    font-weight: 500;
+}
+
+.alerta-error {
+    background-color: var(--grimaldi-error-bg);
+    color: var(--grimaldi-error);
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+    border-left: 4px solid var(--grimaldi-error);
+    font-weight: 500;
+}
+
+.alerta-estado {
+    background-color: var(--grimaldi-warning-bg);
+    color: var(--grimaldi-warning);
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+    border-left: 4px solid var(--grimaldi-warning);
+    font-weight: 500;
+}
+
+/* ═══════════════════════════════════ */
+/*          FORM COMPONENTS           */
+/* ═══════════════════════════════════ */
+
+.formulario-grimaldi input,
+.formulario-grimaldi select,
+.formulario-grimaldi textarea {
+    padding: 0.75rem var(--space-md);
+    border: 2px solid var(--grimaldi-border);
+    border-radius: var(--radius-md);
+    background-color: var(--grimaldi-white);
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    width: 100%;
+    transition: all var(--transition-normal);
+    box-sizing: border-box;
+}
+
+.formulario-grimaldi input:focus,
+.formulario-grimaldi select:focus,
+.formulario-grimaldi textarea:focus {
+    border-color: var(--grimaldi-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 105, 204, 0.1);
+}
+
+.formulario-grimaldi label {
+    color: var(--grimaldi-blue);
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    font-size: 0.95rem;
+}
+
+/* ═══════════════════════════════════ */
+/*          LIST COMPONENTS           */
+/* ═══════════════════════════════════ */
+
+.lista-institucional {
+    list-style: none;
+    padding-left: 0;
+    margin-top: var(--space-lg);
+}
+
+.lista-institucional li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.lista-institucional li::before {
+    content: '\2713';
+    color: var(--grimaldi-blue);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════ */
+/*          RESPONSIVE (COMP.)        */
+/* ═══════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .titulo-principal {
+        font-size: 2rem;
+        padding: 0 var(--space-md);
+    }
+
+    .boton-primario,
+    .boton-secundario {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cards-contenedor {
+        gap: var(--space-lg);
+    }
+
+    .card-grimaldi {
+        max-width: 100%;
+        margin: 0 var(--space-md);
+    }
+
+    .card-panel {
+        padding: var(--space-lg);
+    }
+}
+
+/* ═══════════════════════════════════ */
+/*          UTILITIES AND ANIMATIONS  */
+/* ═══════════════════════════════════ */
+
+@keyframes softFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: softFadeIn var(--transition-slow) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}

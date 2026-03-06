@@ -1,0 +1,105 @@
+/* Schedule Matrix DataGrid Styles */
+.schedule-matrix-wrapper {
+    overflow-x: auto;
+    position: relative;
+    box-shadow: var(--grimaldi-shadow-lg);
+    border-radius: var(--radius-lg);
+    background: var(--grimaldi-white);
+    max-height: 70vh;
+}
+
+.matrix-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 800px;
+    font-size: 0.9rem;
+    font-family: var(--font-primary);
+}
+
+.matrix-table th,
+.matrix-table td {
+    border-right: 1px solid var(--grimaldi-border);
+    border-bottom: 1px solid var(--grimaldi-border);
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+/* Headers */
+.matrix-table thead th {
+    background-color: var(--grimaldi-blue);
+    color: var(--grimaldi-white);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Service Row Header */
+.matrix-table thead tr.service-row th {
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    letter-spacing: 1px;
+    background-color: var(--grimaldi-blue-dark);
+}
+
+/* Vessel Row Header */
+.matrix-table thead tr.vessel-row th {
+    top: 45px;
+    /* Offset for sticky */
+    font-size: 0.95rem;
+}
+
+/* ETA/ETS Row Header */
+.matrix-table thead tr.eta-ets-row th {
+    top: 90px;
+    background-color: var(--grimaldi-blue-darker);
+    font-size: 0.85rem;
+}
+
+/* Sticky First Column for Ports */
+.matrix-table th.sticky-col,
+.matrix-table td.sticky-col {
+    position: sticky;
+    left: 0;
+    background-color: var(--grimaldi-gray-light);
+    color: var(--grimaldi-dark);
+    font-weight: 700;
+    text-align: left;
+    z-index: 30;
+    border-right: 2px solid var(--grimaldi-blue);
+}
+
+.matrix-table thead th.sticky-col {
+    background-color: var(--grimaldi-blue-darker);
+    color: var(--grimaldi-white);
+    z-index: 40;
+    /* Must sit above everything when scrolling down and right */
+    vertical-align: bottom;
+    padding-bottom: 1rem;
+}
+
+.matrix-table tbody tr:hover td:not(.sticky-col) {
+    background-color: var(--grimaldi-blue-subtle);
+}
+
+/* ETA / ETS Styling based on image */
+.eta-cell {
+    color: #0055A4;
+    font-weight: 600;
+}
+
+.ets-cell {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.empty-cell {
+    background-color: #f8f9fa;
+    /* slightly off white */
+    color: transparent;
+}

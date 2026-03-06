@@ -1,0 +1,44 @@
+{
+    "ultima_actualizacion": "01/03/2026",
+    "rutas": [
+        {
+            "id": "sa-eu",
+            "nombre": "South America - Europe",
+            "viajes": [
+                {
+                    "buque": "Grande Amburgo",
+                    "viaje": "GAA0126",
+                    "zarate_eta": "10/03/2026",
+                    "zarate_ets": "12/03/2026",
+                    "santos_eta": "15/03/2026",
+                    "antwerp_eta": "28/03/2026",
+                    "hamburg_eta": "02/04/2026"
+                },
+                {
+                    "buque": "Grande Francia",
+                    "viaje": "GFA0826",
+                    "zarate_eta": "24/03/2026",
+                    "zarate_ets": "26/03/2026",
+                    "santos_eta": "29/03/2026",
+                    "antwerp_eta": "11/04/2026",
+                    "hamburg_eta": "15/04/2026"
+                }
+            ]
+        },
+        {
+            "id": "sa-af",
+            "nombre": "South America - West Africa",
+            "viajes": [
+                {
+                    "buque": "Repubblica di Roma",
+                    "viaje": "RRO0426",
+                    "zarate_eta": "05/03/2026",
+                    "zarate_ets": "07/03/2026",
+                    "paranagua_eta": "10/03/2026",
+                    "dakár_eta": "22/03/2026",
+                    "lagos_eta": "28/03/2026"
+                }
+            ]
+        }
+    ]
+}

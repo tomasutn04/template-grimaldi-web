@@ -1,0 +1,92 @@
+/* ============================================= */
+/* GRIMALDI DESIGN SYSTEM — VARIABLES & TOKENS   */
+/* ============================================= */
+
+:root {
+  /* ─── Brand Colors (from Grimaldi Brand Book) ─── */
+  --grimaldi-blue: #0069CC;
+  --grimaldi-blue-dark: #004C99;
+  --grimaldi-blue-darker: #003366;
+  --grimaldi-blue-light: #e0e7f1;
+  --grimaldi-blue-subtle: #f0f5fb;
+
+  /* ─── Brand Accents ─── */
+  --grimaldi-yellow: #D4A843;
+  --grimaldi-accent: #D4A843;
+
+  /* ─── Neutrals ─── */
+  --grimaldi-white: #ffffff;
+  --grimaldi-gray-light: #f9f9f9;
+  --grimaldi-gray: #ededed;
+  --grimaldi-gray-mid: #cccccc;
+  --grimaldi-border: #dddddd;
+
+  /* ─── Semantic Aliases (used in page inline styles) ─── */
+  --grimaldi-dark: #1a1a2e;
+  --grimaldi-light-gray: #f5f7fa;
+  --grimaldi-light-blue: #c8ddf0;
+  --border-color: #dde3ea;
+  --error-color: var(--grimaldi-error);
+
+  /* ─── Text ─── */
+  --grimaldi-text: #333333;
+  --grimaldi-text-light: #666666;
+  --grimaldi-text-muted: #999999;
+
+  /* ─── Semantic Colors ─── */
+  --grimaldi-success: #155724;
+  --grimaldi-success-bg: #d4edda;
+  --grimaldi-error: #721c24;
+  --grimaldi-error-bg: #f8d7da;
+  --grimaldi-warning: #856404;
+  --grimaldi-warning-bg: #fff3cd;
+
+  /* ─── State Colors ─── */
+  --status-active: #28a745;
+  --status-inactive: #dc3545;
+
+  /* ─── Elevation (Soft UI) ─── */
+  --grimaldi-shadow-sm: 0 2px 8px rgba(0, 51, 102, 0.04);
+  --grimaldi-shadow: 0 8px 24px rgba(0, 51, 102, 0.08);
+  --grimaldi-shadow-md: 0 12px 32px rgba(0, 51, 102, 0.10);
+  --grimaldi-shadow-lg: 0 16px 48px rgba(0, 51, 102, 0.12);
+  --grimaldi-shadow-xl: 0 24px 64px rgba(0, 51, 102, 0.16);
+
+  /* ─── Typography ─── */
+  --font-primary: 'Verdana', 'Geneva', 'Arial', sans-serif;
+  --font-heading: 'Verdana', 'Geneva', 'Arial', sans-serif;
+  --letter-spacing-base: 0.3px;
+  --letter-spacing-heading: 1px;
+
+  /* ─── Spacing Scale ─── */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* ─── Borders ─── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 50%;
+
+  /* ─── Transitions ─── */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ─── Z-Index Layers ─── */
+  --z-dropdown: 100;
+  --z-header: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+
+  /* ─── Container ─── */
+  --container-max: 1280px;
+  --container-wide: 85%;
+}

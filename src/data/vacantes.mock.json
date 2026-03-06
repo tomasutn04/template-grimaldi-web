@@ -1,0 +1,18 @@
+{
+    "vacantes": [
+        {
+            "id": 1,
+            "titulo": "Analista de Comercio Exterior",
+            "ubicacion": "CABA, Buenos Aires",
+            "departamento": "Comercial / Documentación",
+            "descripcion": "Buscamos un Analista de Comex Sr para unirse a nuestro equipo. \n\nResponsabilidades:\n- Coordinación de embarques.\n- Emisión de conocimientos de embarque (BLs).\n- Trato directo con clientes y proveedores.\n\nRequisitos:\n- Experiencia comprobable mínima de 3 años en agencias marítimas o forwarders.\n- Nivel avanzado de idioma inglés.\n- Estudiante avanzado o graduado de carreras afines a Comercio Internacional."
+        },
+        {
+            "id": 2,
+            "titulo": "Asistente de Finanzas y Caja",
+            "ubicacion": "CABA, Buenos Aires",
+            "departamento": "Finanzas",
+            "descripcion": "Nos encontramos en la búsqueda de un Asistente administrativo para el área de Finanzas.\n\nResponsabilidades:\n- Facturación y cobranzas.\n- Atención a clientes para solicitud de gastos locales y liberación de BLs.\n- Tareas administrativas generales del sector.\n\nRequisitos:\n- Experiencia en el área de administración/cajas (preferentemente en el rubro logístico).\n- Manejo de herramientas Office (Excel avanzado)."
+        }
+    ]
+}

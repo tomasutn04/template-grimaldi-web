@@ -1,0 +1,108 @@
+        .page-header {
+            background-color: var(--grimaldi-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+        }
+
+        .schedule-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--grimaldi-white);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--grimaldi-shadow-sm);
+            margin-bottom: 2rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .schedule-select-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .schedule-select-wrapper select {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            color: var(--grimaldi-dark);
+            min-width: 250px;
+            background-color: var(--grimaldi-light-gray);
+            cursor: pointer;
+        }
+
+        /* Table Wrapper for horizontal scroll */
+        .table-responsive {
+            overflow-x: auto;
+            max-height: 600px;
+            overflow-y: auto;
+            background: var(--grimaldi-white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--grimaldi-shadow);
+            border-top: 4px solid var(--grimaldi-blue);
+        }
+
+        .grimaldi-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 600px;
+        }
+
+        .grimaldi-table th,
+        .grimaldi-table td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .grimaldi-table th {
+            background-color: var(--grimaldi-light-gray);
+            color: var(--grimaldi-dark);
+            font-weight: 700;
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .grimaldi-table td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color var(--transition-fast);
+        }
+
+        .grimaldi-table tbody tr {
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .grimaldi-table tbody tr:hover td {
+            background-color: var(--grimaldi-blue-subtle);
+        }
+
+        .grimaldi-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .grimaldi-table td.highlight {
+            font-weight: bold;
+            color: var(--grimaldi-blue);
+        }
+
+        .info-panel {
+            background: var(--grimaldi-light-gray);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-left: 4px solid var(--grimaldi-yellow);
+        }
