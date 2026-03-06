@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maqueta - Grimaldi Agencies Argentina Modernización</title>
+    <style>
+        /* ============================================= */
+        /* GRIMALDI MOCKUP - Design System Variables    */
+        /* ============================================= */
+        :root {
+            /* Brand Colors */
+            --grimaldi-blue: #0069CC;
+            --grimaldi-blue-dark: #004C99;
+            --grimaldi-blue-darker: #003366;
+            --grimaldi-blue-light: #3399FF;
+            --grimaldi-blue-subtle: #f0f5fb;
+            --grimaldi-yellow: #D4A843;
+            --grimaldi-white: #ffffff;
+            --grimaldi-gray-light: #f5f7fa;
+            --grimaldi-gray: #ededed;
+            --grimaldi-border: #dde3ea;
+            
+            /* Text Colors */
+            --grimaldi-text: #333333;
+            --grimaldi-text-light: #666666;
+            --grimaldi-text-muted: #999999;
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 51, 102, 0.04);
+            --shadow: 0 8px 24px rgba(0, 51, 102, 0.08);
+            --shadow-lg: 0 16px 48px rgba(0, 51, 102, 0.12);
+            
+            /* Typography */
+            --font-primary: 'Verdana', 'Segoe UI', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--grimaldi-gray-light);
+            color: var(--grimaldi-text);
+            line-height: 1.6;
+        }
+
+        .contenedor-principal {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        /* Navigation for mockup sections */
+        .mockup-nav {
+            background: var(--grimaldi-blue-darker);
+            padding: var(--space-md);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .mockup-nav ul {
+            display: flex;
+            gap: var(--space-md);
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .mockup-nav a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .mockup-nav a:hover {
+            background: rgba(255,255,255,0.1);
+            color: var(--grimaldi-white);
+        }
+
+        .section-divider {
+            background: var(--grimaldi-blue);
+            color: var(--grimaldi-white);
+            text-align: center;
+            padding: var(--space-xl);
+            margin: var(--space-3xl) 0 0;
+        }
+
+        .section-divider h2 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .section-divider p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* ═══════════════════════════════════════════════ */
+        /*    SECCIÓN 1: HOME PAGE - DASHBOARD WIDGETS    */
+        /* ═══════════════════════════════════════════════ */
+
+        .hero-compact {
+            background: linear-gradient(135deg, var(--grimaldi-blue-darker) 0%, var(--grimaldi-blue-dark) 100%);
+            padding: var(--space-3xl) var(--space-lg);
+            text-align: center;
+            color: var(--grimaldi-white);
+            position: relative;
+        }
+
+        .hero-compact h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-compact p {
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto var(--space-xl);
+        }
+
+        /* Search Widget */
+        .hero-search-widget {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            border: 1px solid rgba(255,255,255,0.2);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .schedule-quick-search {
+            display: flex;
+            gap: var(--space-md);
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .search-field {
+            flex: 1;
+            min-width: 180px;
+            max-width: 220px;
+        }
+
+        .search-field select {
+            width: 100%;
+            padding: 0.875rem var(--space-md);
+            border-radius: var(--radius-md);
+            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.95);
+            color: var(--grimaldi-text);
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .search-btn {
+            padding: 0.875rem 1.5rem;
+            background: var(--grimaldi-yellow);
+            border: none;
+            border-radius: var(--radius-md);
+            color: var(--grimaldi-blue-darker);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            transition: all 0.2s;
+        }
+
+        .search-btn:hover {
+            background: #c49a3a;
+            transform: translateY(-2px);
+        }
+
+        /* Dashboard Widgets Grid */
+        .dashboard-widgets {
+            padding: var(--space-3xl) 0;
+            background: var(--grimaldi-gray-light);
+        }
+
+        .widgets-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-lg);
+        }
+
+        .widget-card {
+            background: var(--grimaldi-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border-top: 4px solid var(--grimaldi-blue);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .widget-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .widget-card--exchange { border-top-color: var(--grimaldi-yellow); }
+        .widget-card--schedules { border-top-color: #17a2b8; }
+        .widget-card--news { border-top-color: #28a745; }
+
+        .widget-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-lg);
+            border-bottom: 1px solid var(--grimaldi-gray);
+        }
+
+        .widget-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-md);
+            background: var(--grimaldi-blue-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .widget-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--grimaldi-blue);
+        }
+
+        .widget-card--exchange .widget-icon { background: rgba(212,168,67,0.15); }
+        .widget-card--exchange .widget-icon svg { fill: var(--grimaldi-yellow); }
+        .widget-card--schedules .widget-icon { background: rgba(23,162,184,0.15); }
+        .widget-card--schedules .widget-icon svg { fill: #17a2b8; }
+        .widget-card--news .widget-icon { background: rgba(40,167,69,0.15); }
+        .widget-card--news .widget-icon svg { fill: #28a745; }
+
+        .widget-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--grimaldi-blue);
+        }
+
+        .widget-body {
+            padding: var(--space-lg);
+            flex: 1;
+        }
+
+        .widget-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-md) var(--space-lg);
+            background: var(--grimaldi-gray-light);
+            color: var(--grimaldi-blue);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .widget-link:hover {
+            background: var(--grimaldi-blue);
+            color: var(--grimaldi-white);
+        }
+
+        /* Exchange Rates Widget Content */
+        .exchange-rates {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .rate-item {
+            flex: 1;
+            text-align: center;
+            padding: var(--space-md);
+            background: var(--grimaldi-gray-light);
+            border-radius: var(--radius-md);
+        }
+
+        .rate-currency {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--grimaldi-text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .rate-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--grimaldi-blue);
+        }
+
+        /* Quick Docs Widget Content */
+        .quick-docs-list {
+            list-style: none;
+        }
+
+        .quick-docs-list li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .quick-docs-list a {
+            display: flex;
+            align-items: center;
+            padding: var(--space-sm) var(--space-md);
+            background: var(--grimaldi-gray-light);
+            border-radius: var(--radius-sm);
+            color: var(--grimaldi-text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .quick-docs-list a::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            background: var(--grimaldi-blue);
+            margin-right: var(--space-sm);
+        }
+
+        .quick-docs-list a:hover {
+            background: var(--grimaldi-blue-subtle);
+            color: var(--grimaldi-blue);
+            transform: translateX(4px);
+        }
+
+        /* Departures Widget Content */
+        .departure-item {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: var(--space-sm);
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--grimaldi-gray);
+            align-items: center;
+        }
+
+        .departure-item:last-child { border-bottom: none; }
+
+        .departure-vessel {
+            font-weight: 600;
+            color: var(--grimaldi-blue);
+            font-size: 0.9rem;
+        }
+
+        .departure-route {
+            background: rgba(23,162,184,0.15);
+            color: #17a2b8;
+            padding: 0.2rem 0.5rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .departure-date {
+            font-size: 0.8rem;
+            color: var(--grimaldi-text-muted);
+        }
+
+        /* News Widget Content */
+        .news-item-mini {
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid var(--grimaldi-gray);
+            margin-bottom: var(--space-md);
+        }
+
+        .news-item-mini:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .news-item-mini .news-date {
+            font-size: 0.75rem;
+            color: var(--grimaldi-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .news-item-mini h4 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--grimaldi-text);
+            margin-top: var(--space-xs);
+        }
+
+        /* ═══════════════════════════════════════════════ */
+        /*    SECCIÓN 2: ADMIN DASHBOARD                  */
+        /* ═══════════════════════════════════════════════ */
+
+        .admin-preview {
+            display: flex;
+            min-height: 600px;
+            background: var(--grimaldi-gray-light);
+        }
+
+        /* Sidebar */
+        .admin-sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, var(--grimaldi-blue-darker) 0%, var(--grimaldi-blue-dark) 100%);
+            color: var(--grimaldi-white);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: var(--space-lg);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            fill: var(--grimaldi-yellow);
+        }
+
+        .logo-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .sidebar-nav {
+            flex: 1;
+            padding: var(--space-md) 0;
+        }
+
+        .nav-section-title {
+            display: block;
+            padding: var(--space-sm) var(--space-lg);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 600;
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem var(--space-lg);
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.08);
+            color: var(--grimaldi-white);
+        }
+
+        .nav-link.active {
+            background: rgba(255,255,255,0.12);
+            color: var(--grimaldi-white);
+            border-left-color: var(--grimaldi-yellow);
+        }
+
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .nav-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .nav-badge {
+            background: var(--grimaldi-yellow);
+            color: var(--grimaldi-blue-darker);
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-left: auto;
+        }
+
+        /* Admin Main Content */
+        .admin-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) var(--space-xl);
+            background: var(--grimaldi-white);
+            border-bottom: 1px solid var(--grimaldi-border);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 0.875rem;
+        }
+
+        .breadcrumb-item { color: var(--grimaldi-text-muted); }
+        .breadcrumb-item.active { color: var(--grimaldi-text); font-weight: 600; }
+
+        .user-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: var(--space-sm) 0.75rem;
+            background: none;
+            border: 1px solid var(--grimaldi-border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--grimaldi-blue) 0%, var(--grimaldi-blue-dark) 100%);
+            color: var(--grimaldi-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .user-name { font-size: 0.875rem; font-weight: 600; }
+        .user-role { font-size: 0.7rem; color: var(--grimaldi-text-muted); }
+
+        .admin-content {
+            flex: 1;
+            padding: var(--space-xl);
+        }
+
+        .view-title {
+            font-size: 1.75rem;
+            color: var(--grimaldi-blue);
+            margin-bottom: var(--space-sm);
+        }
+
+        .view-subtitle {
+            color: var(--grimaldi-text-light);
+            margin-bottom: var(--space-xl);
+        }
+
+        /* Stats Cards */
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+        }
+
+        .stat-card {
+            background: var(--grimaldi-white);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            border-top: 4px solid var(--grimaldi-blue);
+            transition: all 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-card--info { border-top-color: #17a2b8; }
+        .stat-card--success { border-top-color: #28a745; }
+        .stat-card--warning { border-top-color: var(--grimaldi-yellow); }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            color: var(--grimaldi-text-light);
+            font-weight: 500;
+            margin-bottom: var(--space-sm);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--grimaldi-blue);
+            line-height: 1;
+            margin-bottom: var(--space-sm);
+        }
+
+        .stat-card--info .stat-value { color: #17a2b8; }
+        .stat-card--success .stat-value { color: #28a745; }
+
+        .stat-card a {
+            font-size: 0.85rem;
+            color: var(--grimaldi-text-muted);
+            text-decoration: none;
+        }
+
+        .stat-card a:hover { color: var(--grimaldi-blue); }
+
+        /* ═══════════════════════════════════════════════ */
+        /*    SECCIÓN 3: NOVEDADES / NEWS PAGE            */
+        /* ═══════════════════════════════════════════════ */
+
+        .news-hero {
+            background: linear-gradient(135deg, var(--grimaldi-blue-darker) 0%, var(--grimaldi-blue-dark) 100%);
+            padding: var(--space-3xl) var(--space-lg);
+            text-align: center;
+            color: var(--grimaldi-white);
+        }
+
+        .news-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .news-hero p {
+            opacity: 0.85;
+        }
+
+        .news-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--space-2xl);
+            padding: var(--space-2xl) 0;
+        }
+
+        .news-main {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+        }
+
+        /* Featured Article */
+        .news-featured {
+            background: var(--grimaldi-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .news-featured__image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--grimaldi-blue) 0%, var(--grimaldi-blue-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--grimaldi-white);
+        }
+
+        .news-featured__content {
+            padding: var(--space-xl);
+        }
+
+        .news-featured__meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .news-tag {
+            background: var(--grimaldi-yellow);
+            color: var(--grimaldi-blue-darker);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .news-tag--magazine {
+            background: var(--grimaldi-blue);
+            color: var(--grimaldi-white);
+        }
+
+        .news-date {
+            font-size: 0.85rem;
+            color: var(--grimaldi-text-muted);
+        }
+
+        .news-featured__title {
+            font-size: 1.75rem;
+            color: var(--grimaldi-blue);
+            margin-bottom: var(--space-md);
+        }
+
+        .news-featured__excerpt {
+            color: var(--grimaldi-text-light);
+            line-height: 1.7;
+        }
+
+        /* News Card */
+        .news-card {
+            display: flex;
+            gap: var(--space-lg);
+            background: var(--grimaldi-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .news-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+
+        .news-card__image {
+            width: 200px;
+            min-height: 160px;
+            background: var(--grimaldi-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--grimaldi-text-muted);
+        }
+
+        .news-card__content {
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-card__title {
+            font-size: 1.1rem;
+            color: var(--grimaldi-blue);
+            margin-bottom: var(--space-sm);
+        }
+
+        .news-card__excerpt {
+            font-size: 0.9rem;
+            color: var(--grimaldi-text-light);
+        }
+
+        /* Sidebar Widgets */
+        .news-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+        }
+
+        .sidebar-widget {
+            background: var(--grimaldi-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            padding: var(--space-lg);
+        }
+
+        .sidebar-widget__title {
+            font-size: 1rem;
+            color: var(--grimaldi-blue);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--grimaldi-blue-light);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .sidebar-widget__title svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--grimaldi-blue);
+        }
+
+        .quick-links {
+            list-style: none;
+        }
+
+        .quick-links li { margin-bottom: var(--space-sm); }
+
+        .quick-links a {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            background: var(--grimaldi-gray-light);
+            border-radius: var(--radius-sm);
+            color: var(--grimaldi-text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .quick-links a:hover {
+            background: var(--grimaldi-blue-subtle);
+            color: var(--grimaldi-blue);
+            transform: translateX(4px);
+        }
+
+        /* Newsletter Widget */
+        .newsletter-widget {
+            background: linear-gradient(135deg, var(--grimaldi-blue) 0%, var(--grimaldi-blue-dark) 100%);
+            color: var(--grimaldi-white);
+        }
+
+        .newsletter-widget .sidebar-widget__title {
+            color: var(--grimaldi-white);
+            border-bottom-color: rgba(255,255,255,0.2);
+        }
+
+        .newsletter-widget .sidebar-widget__title svg {
+            fill: var(--grimaldi-white);
+        }
+
+        .newsletter-widget p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: var(--space-md);
+        }
+
+        .btn-outline-white {
+            display: block;
+            text-align: center;
+            padding: 0.75rem var(--space-lg);
+            border: 2px solid var(--grimaldi-white);
+            border-radius: var(--radius-md);
+            color: var(--grimaldi-white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-outline-white:hover {
+            background: var(--grimaldi-white);
+            color: var(--grimaldi-blue);
+        }
+
+        /* ═══════════════════════════════════════════════ */
+        /*    SECCIÓN 4: CONTACTO DIRECTORY               */
+        /* ═══════════════════════════════════════════════ */
+
+        .contact-hero {
+            background: linear-gradient(135deg, var(--grimaldi-blue-darker) 0%, var(--grimaldi-blue-dark) 100%);
+            padding: var(--space-3xl) var(--space-lg) var(--space-2xl);
+            text-align: center;
+            color: var(--grimaldi-white);
+        }
+
+        .contact-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .contact-hero p {
+            opacity: 0.85;
+            margin-bottom: var(--space-xl);
+        }
+
+        .contact-hero__info {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            flex-wrap: wrap;
+        }
+
+        .contact-hero__item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+        }
+
+        .contact-hero__item svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            opacity: 0.8;
+        }
+
+        /* Toolbar */
+        .contact-toolbar {
+            background: var(--grimaldi-white);
+            border-bottom: 1px solid var(--grimaldi-border);
+            padding: var(--space-md) 0;
+        }
+
+        .toolbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+        }
+
+        .toolbar-search {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: var(--grimaldi-gray-light);
+            border: 2px solid var(--grimaldi-border);
+            border-radius: var(--radius-md);
+            padding: 0.5rem var(--space-md);
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .toolbar-search svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--grimaldi-text-muted);
+        }
+
+        .toolbar-search input {
+            flex: 1;
+            border: none;
+            background: none;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .toolbar-filter {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .toolbar-filter label {
+            font-weight: 600;
+            color: var(--grimaldi-text);
+            font-size: 0.9rem;
+        }
+
+        .toolbar-filter select {
+            padding: 0.6rem 1.25rem;
+            border: 2px solid var(--grimaldi-border);
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            min-width: 220px;
+        }
+
+        /* Contact Cards Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            padding: var(--space-2xl) 0;
+        }
+
+        .contact-card {
+            background: var(--grimaldi-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            padding: var(--space-lg);
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .contact-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+
+        .contact-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--grimaldi-blue) 0%, var(--grimaldi-blue-dark) 100%);
+            color: var(--grimaldi-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto var(--space-md);
+        }
+
+        .contact-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--grimaldi-blue);
+            margin-bottom: var(--space-xs);
+        }
+
+        .contact-position {
+            font-size: 0.85rem;
+            color: var(--grimaldi-text-muted);
+            margin-bottom: var(--space-md);
+        }
+
+        .contact-dept {
+            display: inline-block;
+            background: var(--grimaldi-blue-subtle);
+            color: var(--grimaldi-blue);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-bottom: var(--space-md);
+        }
+
+        .contact-email {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            color: var(--grimaldi-text);
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .contact-email:hover {
+            color: var(--grimaldi-blue);
+        }
+
+        .contact-email svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* CTA Section */
+        .contact-cta {
+            padding: var(--space-2xl) 0 var(--space-3xl);
+            background: var(--grimaldi-gray-light);
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, var(--grimaldi-blue) 0%, var(--grimaldi-blue-dark) 100%);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-xl);
+            color: var(--grimaldi-white);
+        }
+
+        .cta-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .cta-content p {
+            opacity: 0.85;
+        }
+
+        .btn-yellow {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: 0.875rem var(--space-xl);
+            background: var(--grimaldi-yellow);
+            border: none;
+            border-radius: var(--radius-md);
+            color: var(--grimaldi-blue-darker);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-yellow:hover {
+            background: #c49a3a;
+            transform: translateY(-2px);
+        }
+
+        .btn-yellow svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* ═══════════════════════════════════════════════ */
+        /*    RESPONSIVE                                  */
+        /* ═══════════════════════════════════════════════ */
+
+        @media (max-width: 1024px) {
+            .widgets-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .news-layout {
+                grid-template-columns: 1fr;
+            }
+            .news-sidebar {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .widgets-grid {
+                grid-template-columns: 1fr;
+            }
+            .schedule-quick-search {
+                flex-direction: column;
+            }
+            .search-field {
+                max-width: 100%;
+                width: 100%;
+            }
+            .admin-preview {
+                flex-direction: column;
+            }
+            .admin-sidebar {
+                width: 100%;
+            }
+            .news-sidebar {
+                grid-template-columns: 1fr;
+            }
+            .news-card {
+                flex-direction: column;
+            }
+            .news-card__image {
+                width: 100%;
+                height: 160px;
+            }
+            .stats-cards {
+                grid-template-columns: 1fr;
+            }
+            .toolbar-inner {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .toolbar-search {
+                max-width: 100%;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .cta-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-hero__info {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="mockup-nav">
+        <ul>
+            <li><a href="#home">Home Dashboard</a></li>
+            <li><a href="#admin">Admin Dashboard</a></li>
+            <li><a href="#news">Novedades</a></li>
+            <li><a href="#contact">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!--    SECCIÓN 1: HOME PAGE - DASHBOARD WIDGETS    -->
+    <!-- ═══════════════════════════════════════════════ -->
+    
+    <section id="home">
+        <div class="section-divider">
+            <h2>1. HOME PAGE - Dashboard Widgets</h2>
+            <p>Hero compacto con buscador de itinerarios + widgets de acceso rápido</p>
+        </div>
+
+        <!-- Hero Compacto -->
+        <section class="hero-compact">
+            <h1>Bienvenidos a Grimaldi Agencies Argentina</h1>
+            <p>Conectamos mercados a través de rutas marítimas eficientes y confiables, desde y hacia Argentina.</p>
+            
+            <!-- Search Widget -->
+            <div class="hero-search-widget">
+                <form class="schedule-quick-search">
+                    <div class="search-field">
+                        <select>
+                            <option>Puerto de Origen</option>
+                            <option>Zarate, Argentina</option>
+                            <option>Santos, Brasil</option>
+                            <option>Montevideo, Uruguay</option>
+                        </select>
+                    </div>
+                    <div class="search-field">
+                        <select>
+                            <option>Puerto de Destino</option>
+                            <option>Antwerp, Belgica</option>
+                            <option>Hamburg, Alemania</option>
+                            <option>Dakar, Senegal</option>
+                        </select>
+                    </div>
+                    <button type="button" class="search-btn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                        Buscar Itinerarios
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Dashboard Widgets -->
+        <section class="dashboard-widgets">
+            <div class="contenedor-principal">
+                <div class="widgets-grid">
+
+                    <!-- Widget: Tipo de Cambio -->
+                    <div class="widget-card widget-card--exchange">
+                        <div class="widget-header">
+                            <div class="widget-icon">
+                                <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                            </div>
+                            <h3 class="widget-title">Tipo de Cambio</h3>
+                        </div>
+                        <div class="widget-body">
+                            <div class="exchange-rates">
+                                <div class="rate-item">
+                                    <span class="rate-currency">USD</span>
+                                    <span class="rate-value">1,250</span>
+                                </div>
+                                <div class="rate-item">
+                                    <span class="rate-currency">EUR</span>
+                                    <span class="rate-value">1,380</span>
+                                </div>
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--grimaldi-text-muted); margin-top: var(--space-sm);">
+                                Actualizado: 6 Mar 2026
+                            </p>
+                        </div>
+                        <a href="#" class="widget-link">
+                            Ver detalles completos
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Widget: Documentación -->
+                    <div class="widget-card">
+                        <div class="widget-header">
+                            <div class="widget-icon">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                            </div>
+                            <h3 class="widget-title">Documentación</h3>
+                        </div>
+                        <div class="widget-body">
+                            <ul class="quick-docs-list">
+                                <li><a href="#">Formularios Exportación</a></li>
+                                <li><a href="#">Formularios Importación</a></li>
+                                <li><a href="#">Documentación Aduanera</a></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="widget-link">
+                            Ver todos los formularios
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Widget: Próximas Salidas -->
+                    <div class="widget-card widget-card--schedules">
+                        <div class="widget-header">
+                            <div class="widget-icon">
+                                <svg viewBox="0 0 24 24"><path d="M20 8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10h20V10c0-1.1-.9-2-2-2zM9 6h6v2H9V6zm11 12H4v-3h2v1h2v-1h8v1h2v-1h2v3zm0-5h-2v-1h-2v1H8v-1H6v1H4v-3h16v3z"/></svg>
+                            </div>
+                            <h3 class="widget-title">Próximas Salidas</h3>
+                        </div>
+                        <div class="widget-body">
+                            <div class="departure-item">
+                                <span class="departure-vessel">Grande San Paolo</span>
+                                <span class="departure-route">ZAR → ANT</span>
+                                <span class="departure-date">Prox. Viernes</span>
+                            </div>
+                            <div class="departure-item">
+                                <span class="departure-vessel">Grande Francia</span>
+                                <span class="departure-route">ZAR → HAM</span>
+                                <span class="departure-date">En 10 días</span>
+                            </div>
+                        </div>
+                        <a href="#" class="widget-link">
+                            Ver itinerario completo
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Widget: Noticias -->
+                    <div class="widget-card widget-card--news">
+                        <div class="widget-header">
+                            <div class="widget-icon">
+                                <svg viewBox="0 0 24 24"><path d="M22 3l-1.67 1.67L18.67 3 17 4.67 15.33 3l-1.66 1.67L12 3l-1.67 1.67L8.67 3 7 4.67 5.33 3 3.67 4.67 2 3v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V3zM11 19H4v-6h7v6zm9 0h-7v-2h7v2zm0-4h-7v-2h7v2zm0-4H4V8h16v3z"/></svg>
+                            </div>
+                            <h3 class="widget-title">Últimas Noticias</h3>
+                        </div>
+                        <div class="widget-body">
+                            <article class="news-item-mini">
+                                <span class="news-date">Mar 2026</span>
+                                <h4>Nuevas rutas desde Terminal Zárate</h4>
+                            </article>
+                            <article class="news-item-mini">
+                                <span class="news-date">Feb 2026</span>
+                                <h4>Grimaldi Group expande flota</h4>
+                            </article>
+                        </div>
+                        <a href="#" class="widget-link">
+                            Ver todas las noticias
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!--    SECCIÓN 2: ADMIN DASHBOARD                  -->
+    <!-- ═══════════════════════════════════════════════ -->
+
+    <section id="admin">
+        <div class="section-divider">
+            <h2>2. ADMIN DASHBOARD</h2>
+            <p>Sidebar moderno con navegación basada en roles + header con user dropdown</p>
+        </div>
+
+        <div class="admin-preview">
+            <!-- Sidebar -->
+            <aside class="admin-sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-logo">
+                        <svg class="logo-icon" viewBox="0 0 24 24">
+                            <path d="M20 8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10h20V10c0-1.1-.9-2-2-2zM9 6h6v2H9V6zm11 12H4v-3h2v1h2v-1h8v1h2v-1h2v3z"/>
+                        </svg>
+                        <div>
+                            <span class="logo-title">Grimaldi</span><br>
+                            <span class="logo-subtitle">Portal Interno</span>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <span class="nav-section-title">Módulos</span>
+                    <ul class="nav-list">
+                        <li>
+                            <a href="#" class="nav-link">
+                                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></span>
+                                <span>Tipo de Cambio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link">
+                                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M20 8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10h20V10c0-1.1-.9-2-2-2zM9 6h6v2H9V6zm11 12H4v-3h2v1h2v-1h8v1h2v-1h2v3z"/></svg></span>
+                                <span>Schedules</span>
+                                <span class="nav-badge">CS</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link active">
+                                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span>
+                                <span>Recursos Humanos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link">
+                                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></span>
+                                <span>Documentación</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="admin-main">
+                <header class="admin-header">
+                    <nav class="breadcrumb">
+                        <span class="breadcrumb-item">Portal</span>
+                        <span style="color: var(--grimaldi-text-muted);">/</span>
+                        <span class="breadcrumb-item active">Recursos Humanos</span>
+                    </nav>
+                    <button class="user-btn">
+                        <div class="user-avatar">JD</div>
+                        <div style="text-align: left;">
+                            <span class="user-name">Juan Díaz</span><br>
+                            <span class="user-role">Admin Global</span>
+                        </div>
+                    </button>
+                </header>
+
+                <div class="admin-content">
+                    <h1 class="view-title">Recursos Humanos</h1>
+                    <p class="view-subtitle">Gestiona empleados, vacantes y postulantes</p>
+
+                    <div class="stats-cards">
+                        <div class="stat-card stat-card--info">
+                            <h3>Staff Activo</h3>
+                            <div class="stat-value">24</div>
+                            <a href="#">Ver Directorio</a>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Vacantes Abiertas</h3>
+                            <div class="stat-value">3</div>
+                            <a href="#">Gestionar Vacantes</a>
+                        </div>
+                        <div class="stat-card stat-card--success">
+                            <h3>Nuevos CVs</h3>
+                            <div class="stat-value">12</div>
+                            <a href="#">Revisar Postulantes</a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!--    SECCIÓN 3: NOVEDADES / NEWS PAGE            -->
+    <!-- ═══════════════════════════════════════════════ -->
+
+    <section id="news">
+        <div class="section-divider">
+            <h2>3. NOVEDADES PAGE</h2>
+            <p>Layout tipo revista/blog con artículo destacado + sidebar con widgets</p>
+        </div>
+
+        <header class="news-hero">
+            <h1>Novedades Corporativas</h1>
+            <p>Manténgase informado con nuestra revista trimestral y las últimas actualizaciones de Grimaldi Group.</p>
+        </header>
+
+        <section class="contenedor-principal">
+            <div class="news-layout">
+                
+                <!-- Main Column -->
+                <div class="news-main">
+                    <!-- Featured Article -->
+                    <article class="news-featured">
+                        <div class="news-featured__image">
+                            <span style="font-size: 3rem;">Imagen Destacada</span>
+                        </div>
+                        <div class="news-featured__content">
+                            <div class="news-featured__meta">
+                                <span class="news-tag news-tag--magazine">Revista</span>
+                                <span class="news-date">6 de marzo, 2026</span>
+                            </div>
+                            <h2 class="news-featured__title">Nuevas rutas desde Terminal Zárate hacia Europa y África</h2>
+                            <p class="news-featured__excerpt">
+                                Grimaldi Group anuncia la expansión de servicios directos desde el puerto de Zárate, 
+                                conectando Argentina con los principales destinos europeos y africanos con mayor frecuencia.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Article Card -->
+                    <article class="news-card">
+                        <div class="news-card__image">
+                            <span>Imagen</span>
+                        </div>
+                        <div class="news-card__content">
+                            <div class="news-featured__meta">
+                                <span class="news-tag">Noticia</span>
+                                <span class="news-date">Feb 2026</span>
+                            </div>
+                            <h3 class="news-card__title">Grimaldi Group expande su flota con nuevos buques eco-friendly</h3>
+                            <p class="news-card__excerpt">La compañía invierte en tecnología sustentable para reducir emisiones...</p>
+                        </div>
+                    </article>
+
+                    <!-- Article Card -->
+                    <article class="news-card">
+                        <div class="news-card__image">
+                            <span>Imagen</span>
+                        </div>
+                        <div class="news-card__content">
+                            <div class="news-featured__meta">
+                                <span class="news-tag news-tag--magazine">Revista</span>
+                                <span class="news-date">Ene 2026</span>
+                            </div>
+                            <h3 class="news-card__title">Grimaldi News Q4 2025 - Edición especial de fin de año</h3>
+                            <p class="news-card__excerpt">Resumen de logros y proyecciones para el nuevo año...</p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="news-sidebar">
+                    <!-- Quick Links -->
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-widget__title">
+                            <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                            Enlaces Rápidos
+                        </h3>
+                        <ul class="quick-links">
+                            <li><a href="#">Itinerarios (Schedules)</a></li>
+                            <li><a href="#">Tipo de Cambio</a></li>
+                            <li><a href="#">Documentación</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="sidebar-widget newsletter-widget">
+                        <h3 class="sidebar-widget__title">
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            Suscríbase
+                        </h3>
+                        <p>Reciba las últimas novedades directamente en su correo.</p>
+                        <a href="#" class="btn-outline-white">Contactar</a>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!--    SECCIÓN 4: CONTACTO DIRECTORY               -->
+    <!-- ═══════════════════════════════════════════════ -->
+
+    <section id="contact">
+        <div class="section-divider">
+            <h2>4. CONTACTO DIRECTORY</h2>
+            <p>Hero con info rápida + toolbar de búsqueda/filtros + tarjetas de contacto</p>
+        </div>
+
+        <header class="contact-hero">
+            <h1>Directorio de Contactos</h1>
+            <p>Encuentre rápidamente a la persona de contacto en el departamento correspondiente.</p>
+            <div class="contact-hero__info">
+                <div class="contact-hero__item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                    <span>25 de Mayo 702, 1er Piso, CABA</span>
+                </div>
+                <div class="contact-hero__item">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <span>+54 11 4312-6886</span>
+                </div>
+                <div class="contact-hero__item">
+                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg>
+                    <span>Lunes a Viernes: 9:00 - 17:00</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Toolbar -->
+        <section class="contact-toolbar">
+            <div class="contenedor-principal">
+                <div class="toolbar-inner">
+                    <div class="toolbar-search">
+                        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        <input type="text" placeholder="Buscar por nombre o correo...">
+                    </div>
+                    <div class="toolbar-filter">
+                        <label>Departamento:</label>
+                        <select>
+                            <option>Todos los departamentos</option>
+                            <option>Comercial</option>
+                            <option>Operaciones</option>
+                            <option>Finanzas</option>
+                            <option>Customer Service</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Cards -->
+        <section class="contenedor-principal">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-avatar">MG</div>
+                    <h3 class="contact-name">María García</h3>
+                    <p class="contact-position">Gerente Comercial</p>
+                    <span class="contact-dept">Comercial</span>
+                    <a href="mailto:mgarcia@grimaldi-bue.com.ar" class="contact-email">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        mgarcia@grimaldi-bue.com.ar
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-avatar">JP</div>
+                    <h3 class="contact-name">Juan Pérez</h3>
+                    <p class="contact-position">Jefe de Operaciones</p>
+                    <span class="contact-dept">Operaciones</span>
+                    <a href="mailto:jperez@grimaldi-bue.com.ar" class="contact-email">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        jperez@grimaldi-bue.com.ar
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-avatar">LR</div>
+                    <h3 class="contact-name">Laura Rodríguez</h3>
+                    <p class="contact-position">Analista de Finanzas</p>
+                    <span class="contact-dept">Finanzas</span>
+                    <a href="mailto:lrodriguez@grimaldi-bue.com.ar" class="contact-email">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        lrodriguez@grimaldi-bue.com.ar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="contact-cta">
+            <div class="contenedor-principal">
+                <div class="cta-card">
+                    <div class="cta-content">
+                        <h2>No encuentra lo que busca?</h2>
+                        <p>Envíenos un mensaje general y lo redireccionaremos al departamento correspondiente.</p>
+                    </div>
+                    <a href="#" class="btn-yellow">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        Contacto General
+                    </a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer style="background: var(--grimaldi-blue-darker); color: rgba(255,255,255,0.6); text-align: center; padding: var(--space-xl);">
+        <p>Maqueta de Diseño - Grimaldi Agencies Argentina</p>
+        <p style="font-size: 0.8rem; margin-top: var(--space-sm);">Archivo de referencia para implementación</p>
+    </footer>
+
+</body>
+</html>
