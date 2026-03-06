@@ -1,44 +1,242 @@
-        .page-header {
-            background: linear-gradient(180deg, var(--grimaldi-light-gray) 0%, var(--grimaldi-white) 100%);
-            padding: 4rem 1rem 2.5rem;
-            text-align: center;
-        }
+/* ============================================= */
+/* GRIMALDI CONTACT DIRECTORY — Professional     */
+/* ============================================= */
 
-        .filtro-sectores {
-            background: var(--grimaldi-white);
-            padding: 1rem 1.5rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--grimaldi-shadow);
-            margin-bottom: 2.5rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            border: none;
-            transition: box-shadow var(--transition-normal);
-        }
+/* ─── Contact Hero ─── */
+.contact-hero {
+    background: linear-gradient(135deg, var(--grimaldi-blue-darker) 0%, var(--grimaldi-blue-dark) 100%);
+    padding: var(--space-3xl) var(--space-md) var(--space-2xl);
+    text-align: center;
+    color: var(--grimaldi-white);
+}
 
-        .filtro-sectores:hover {
-            box-shadow: var(--grimaldi-shadow-md);
-        }
+.contact-hero .titulo-principal {
+    color: var(--grimaldi-white);
+    border-bottom: none;
+    margin-bottom: var(--space-md);
+}
 
-        .filtro-sectores select {
-            padding: 0.6rem 1.25rem;
-            border: 2px solid var(--grimaldi-blue-light);
-            border-radius: var(--radius-md);
-            font-size: 1rem;
-            color: var(--grimaldi-text);
-            min-width: 220px;
-            background-color: var(--grimaldi-blue-subtle);
-            cursor: pointer;
-            transition: border-color var(--transition-fast);
-            letter-spacing: var(--letter-spacing-base);
-        }
+.contact-hero .cuerpo-principal {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: var(--space-xl);
+}
 
-        .filtro-sectores select:focus {
-            border-color: var(--grimaldi-blue);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(0, 105, 204, 0.1);
-        }
+.contact-hero__info {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.contact-hero__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+}
+
+.contact-hero__item svg {
+    opacity: 0.8;
+}
+
+.contact-hero__item a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-hero__item a:hover {
+    text-decoration: underline;
+}
+
+/* ─── Toolbar ─── */
+.contact-toolbar {
+    background-color: var(--grimaldi-white);
+    border-bottom: 1px solid var(--grimaldi-border);
+    position: sticky;
+    top: 60px;
+    z-index: 50;
+    padding: var(--space-md) 0;
+}
+
+.toolbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.toolbar-search {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background-color: var(--grimaldi-gray-light);
+    border: 2px solid var(--grimaldi-border);
+    border-radius: var(--radius-md);
+    padding: 0.5rem var(--space-md);
+    flex: 1;
+    max-width: 400px;
+    transition: border-color var(--transition-fast);
+}
+
+.toolbar-search:focus-within {
+    border-color: var(--grimaldi-blue);
+    background-color: var(--grimaldi-white);
+}
+
+.toolbar-search input {
+    flex: 1;
+    border: none;
+    background: none;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--grimaldi-text);
+    outline: none;
+}
+
+.toolbar-search input::placeholder {
+    color: var(--grimaldi-text-muted);
+}
+
+.toolbar-filter {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.toolbar-filter label {
+    font-weight: 600;
+    color: var(--grimaldi-text);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.toolbar-filter select {
+    padding: 0.6rem 1.25rem;
+    border: 2px solid var(--grimaldi-border);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    color: var(--grimaldi-text);
+    min-width: 220px;
+    background-color: var(--grimaldi-white);
+    cursor: pointer;
+    transition: border-color var(--transition-fast);
+    font-family: inherit;
+}
+
+.toolbar-filter select:focus {
+    border-color: var(--grimaldi-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 105, 204, 0.1);
+}
+
+/* ─── Contact Directory ─── */
+.contact-directory {
+    padding: var(--space-2xl) 0;
+    min-height: 50vh;
+}
+
+/* Loading State */
+.contact-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3xl);
+    color: var(--grimaldi-text-muted);
+}
+
+.contact-loading__spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--grimaldi-gray);
+    border-top-color: var(--grimaldi-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: var(--space-md);
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ─── Contact CTA Section ─── */
+.contact-cta {
+    padding: var(--space-2xl) 0 var(--space-3xl);
+    background-color: var(--grimaldi-gray-light);
+}
+
+.cta-card {
+    background: linear-gradient(135deg, var(--grimaldi-blue) 0%, var(--grimaldi-blue-dark) 100%);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+    color: var(--grimaldi-white);
+}
+
+.cta-content h2 {
+    color: var(--grimaldi-white);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+}
+
+.cta-content p {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    font-size: 1rem;
+}
+
+.cta-card .boton-primario {
+    background-color: var(--grimaldi-yellow);
+    border-color: var(--grimaldi-yellow);
+    color: var(--grimaldi-blue-darker);
+    flex-shrink: 0;
+}
+
+.cta-card .boton-primario:hover {
+    background-color: #c49a3a;
+    border-color: #c49a3a;
+}
+
+/* ─── Responsive Toolbar ─── */
+@media (max-width: 768px) {
+    .contact-hero__info {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .toolbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .toolbar-search {
+        max-width: 100%;
+    }
+
+    .toolbar-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .toolbar-filter select {
+        min-width: 100%;
+    }
+
+    .cta-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-card .boton-primario {
+        width: 100%;
+    }
+}
 
         .sector-bloque {
             margin-bottom: 3.5rem;

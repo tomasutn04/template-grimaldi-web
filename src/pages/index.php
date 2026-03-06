@@ -56,9 +56,9 @@
     <main id="main-content" role="main">
 
         <!-- ═══════════════════════════════════ -->
-        <!--        HERO BANNER                 -->
+        <!--        HERO BANNER (Compact)       -->
         <!-- ═══════════════════════════════════ -->
-        <section class="hero-banner" aria-labelledby="hero-title" id="hero">
+        <section class="hero-banner hero-banner--compact" aria-labelledby="hero-title" id="hero">
             <img class="hero-banner__bg" src="<?php echo ASSETS_URL; ?>/img/grande_amburgo.png"
                 alt="Buque Grimaldi Grande Amburgo navegando en alta mar" width="1920" height="1080">
 
@@ -69,15 +69,36 @@
                 <p class="cuerpo-principal" data-i18n="hero.subtitle">
                     Conectamos mercados a través de rutas marítimas eficientes y confiables, desde y hacia Argentina.
                 </p>
-                <div class="hero-cta-group">
-                    <a href="tipo-de-cambio" class="boton-secundario" data-i18n="hero.cta_exchange">TIPO DE
-                        CAMBIO</a>
-                    <a href="schedule" class="boton-secundario" data-i18n="hero.cta_schedule">SCHEDULE</a>
-                    <a href="documentacion" class="boton-secundario" data-i18n="hero.cta_docs">DOCUMENTACIÓN</a>
-                    <a href="servicios" class="boton-secundario" data-i18n="hero.cta_services">SERVICIOS Y
-                        COMERCIAL</a>
-                    <a href="institucional" class="boton-secundario"
-                        data-i18n="hero.cta_institutional">INSTITUCIONAL</a>
+                
+                <!-- Quick Schedule Search Widget -->
+                <div class="hero-search-widget">
+                    <form class="schedule-quick-search" action="schedule" method="GET">
+                        <div class="search-field">
+                            <label for="hero-origin" class="sr-only">Puerto de Origen</label>
+                            <select id="hero-origin" name="origin">
+                                <option value="">Puerto de Origen</option>
+                                <option value="zarate">Zarate, Argentina</option>
+                                <option value="santos">Santos, Brasil</option>
+                                <option value="montevideo">Montevideo, Uruguay</option>
+                            </select>
+                        </div>
+                        <div class="search-field">
+                            <label for="hero-destination" class="sr-only">Puerto de Destino</label>
+                            <select id="hero-destination" name="destination">
+                                <option value="">Puerto de Destino</option>
+                                <option value="antwerp">Antwerp, Belgica</option>
+                                <option value="hamburg">Hamburg, Alemania</option>
+                                <option value="dakar">Dakar, Senegal</option>
+                                <option value="tema">Tema, Ghana</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="boton-primario search-btn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                                <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                            Buscar Itinerarios
+                        </button>
+                    </form>
                 </div>
             </div>
 
@@ -86,6 +107,127 @@
                 <svg viewBox="0 0 24 24">
                     <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
                 </svg>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════ -->
+        <!--     DASHBOARD WIDGETS SECTION      -->
+        <!-- ═══════════════════════════════════ -->
+        <section class="dashboard-widgets" aria-label="Acceso rápido a servicios" id="widgets">
+            <div class="contenedor-principal">
+                <div class="widgets-grid">
+
+                    <!-- Widget 1: Tipo de Cambio -->
+                    <div class="widget-card widget-card--exchange">
+                        <div class="widget-header">
+                            <div class="widget-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                                </svg>
+                            </div>
+                            <h3 class="widget-title">Tipo de Cambio</h3>
+                        </div>
+                        <div class="widget-body">
+                            <div class="exchange-rates" id="exchange-widget">
+                                <div class="rate-item">
+                                    <span class="rate-currency">USD</span>
+                                    <span class="rate-value" id="usd-rate">--</span>
+                                </div>
+                                <div class="rate-item">
+                                    <span class="rate-currency">EUR</span>
+                                    <span class="rate-value" id="eur-rate">--</span>
+                                </div>
+                            </div>
+                            <p class="widget-update">Actualizado: <span id="rate-date">--</span></p>
+                        </div>
+                        <a href="tipo-de-cambio" class="widget-link">
+                            Ver detalles completos
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Widget 2: Documentación -->
+                    <div class="widget-card widget-card--docs">
+                        <div class="widget-header">
+                            <div class="widget-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                                </svg>
+                            </div>
+                            <h3 class="widget-title">Documentación</h3>
+                        </div>
+                        <div class="widget-body">
+                            <ul class="quick-docs-list">
+                                <li><a href="documentacion#export">Formularios Exportación</a></li>
+                                <li><a href="documentacion#import">Formularios Importación</a></li>
+                                <li><a href="documentacion#customs">Documentación Aduanera</a></li>
+                            </ul>
+                        </div>
+                        <a href="documentacion" class="widget-link">
+                            Ver todos los formularios
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Widget 3: Schedules -->
+                    <div class="widget-card widget-card--schedules">
+                        <div class="widget-header">
+                            <div class="widget-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M20 8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10h20V10c0-1.1-.9-2-2-2zM9 6h6v2H9V6zm11 12H4v-3h2v1h2v-1h8v1h2v-1h2v3zm0-5h-2v-1h-2v1H8v-1H6v1H4v-3h16v3z"/>
+                                </svg>
+                            </div>
+                            <h3 class="widget-title">Próximas Salidas</h3>
+                        </div>
+                        <div class="widget-body">
+                            <div class="next-departures" id="departures-widget">
+                                <div class="departure-item">
+                                    <span class="departure-vessel">Grande San Paolo</span>
+                                    <span class="departure-route">ZAR → ANT</span>
+                                    <span class="departure-date">Prox. Viernes</span>
+                                </div>
+                                <div class="departure-item">
+                                    <span class="departure-vessel">Grande Francia</span>
+                                    <span class="departure-route">ZAR → HAM</span>
+                                    <span class="departure-date">En 10 días</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="schedule" class="widget-link">
+                            Ver itinerario completo
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Widget 4: Noticias -->
+                    <div class="widget-card widget-card--news">
+                        <div class="widget-header">
+                            <div class="widget-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M22 3l-1.67 1.67L18.67 3 17 4.67 15.33 3l-1.66 1.67L12 3l-1.67 1.67L8.67 3 7 4.67 5.33 3 3.67 4.67 2 3v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V3zM11 19H4v-6h7v6zm9 0h-7v-2h7v2zm0-4h-7v-2h7v2zm0-4H4V8h16v3z"/>
+                                </svg>
+                            </div>
+                            <h3 class="widget-title">Últimas Noticias</h3>
+                        </div>
+                        <div class="widget-body">
+                            <div class="news-preview">
+                                <article class="news-item-mini">
+                                    <span class="news-date">Mar 2026</span>
+                                    <h4>Nuevas rutas desde Terminal Zárate</h4>
+                                </article>
+                                <article class="news-item-mini">
+                                    <span class="news-date">Feb 2026</span>
+                                    <h4>Grimaldi Group expande flota</h4>
+                                </article>
+                            </div>
+                        </div>
+                        <a href="novedades" class="widget-link">
+                            Ver todas las noticias
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </section>
 
